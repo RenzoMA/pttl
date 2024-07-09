@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@pttl/contact-us": ["libs/contact-us/src/index.ts"],
+      "@pttl/transfers": ["libs/transfers/src/index.ts"],
+      "@pttl/ui-components": ["libs/ui-components/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

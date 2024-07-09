@@ -19,10 +19,16 @@
         "assets": [
           {
             "glob": "**/*",
-            "input": "apps/pptl-web/public"
+            "input": "apps/pptl-web/public",
+            "output": "/assets/"
           }
         ],
-        "styles": ["apps/pptl-web/src/styles.scss"],
+        "styles": [
+          "apps/pptl-web/src/styles.scss",
+          "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+          "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
+          "node_modules/primeng/resources/primeng.min.css"
+        ],
         "scripts": [],
         "server": "apps/pptl-web/src/main.server.ts",
         "prerender": true,

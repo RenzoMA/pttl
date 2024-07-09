@@ -1,0 +1,74 @@
+<nav class="bg-white text-gray-400 px-4 shadow-md relative z-0">
+  <div class="flex justify-between">
+    <div class="flex items-center mr-12 py-3">
+      <img src="assets/logo.png" alt="Company Logo" width="200px" />
+    </div>
+
+    <div class="hidden md:flex justify-between items-center flex-grow">
+      <div class="flex items-center h-full gap-2">
+        <a
+          routerLinkActive="!border-highlight-dark"
+          routerLink="/transfers"
+          class="border-transparent text-gray-500 font-bold h-full flex items-center border-b-2 hover:border-highlight-dark transition duration-150 ease-in-out px-4"
+          ><i class="fas fa-exchange-alt mr-3"></i>Transfers</a
+        >
+        <a
+          routerLinkActive="!border-highlight-dark"
+          routerLink="/contact-us"
+          class="border-transparent text-gray-500 font-bold h-full flex items-center border-b-2 hover:border-highlight-dark transition duration-150 ease-in-out px-4"
+          ><i class="fas fa-envelope mr-3"></i>Contact us</a
+        >
+      </div>
+    </div>
+
+    <div class="justify-end hidden md:flex">
+      <div class="flex items-center space-x-4">
+        <a
+          href="https://facebook.com"
+          target="_blank"
+          class="text-gray-400 hover:text-highlight-dark"
+        >
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a
+          href="https://twitter.com"
+          target="_blank"
+          class="text-gray-400 hover:text-highlight-dark"
+        >
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a
+          href="https://instagram.com"
+          target="_blank"
+          class="text-gray-400 hover:text-highlight-dark"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+    <div class="md:hidden flex items-center mt-2">
+      <button
+        class="text-highlight hover:text-highlight-dark focus:outline-none"
+        (click)="displayMobileMenu = !displayMobileMenu"
+      >
+        <i class="fas fa-bars fa-2x"></i>
+      </button>
+    </div>
+  </div>
+  <div *ngIf="displayMobileMenu" [@fadeInOut] class="md:hidden">
+    <div class="py-4 flex-col flex gap-4">
+      <a
+        routerLink="/transfers"
+        (click)="displayMobileMenu = !displayMobileMenu"
+        class="hover:text-highlight-dark text-xl font-bold"
+        >Transfers</a
+      >
+      <a
+        routerLink="/contact-us"
+        (click)="displayMobileMenu = !displayMobileMenu"
+        class="hover:text-highlight-dark text-xl font-bold"
+        >Contact Us</a
+      >
+    </div>
+  </div>
+</nav>
