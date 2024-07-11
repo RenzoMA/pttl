@@ -7,16 +7,16 @@
     <div class="hidden md:flex justify-between items-center flex-grow">
       <div class="flex items-center h-full gap-2">
         <a
-          routerLinkActive="!border-highlight-dark"
-          routerLink="/transfers"
+          (click)="navigate('transfers')"
+          href="javascript:void(0)"
           class="border-transparent text-gray-500 font-bold h-full flex items-center border-b-2 hover:border-highlight-dark transition duration-150 ease-in-out px-4"
           ><i class="fas fa-exchange-alt mr-3"></i>Transfers</a
         >
         <a
-          routerLinkActive="!border-highlight-dark"
-          routerLink="/contact-us"
+          (click)="navigate('trusted-partners')"
+          href="javascript:void(0)"
           class="border-transparent text-gray-500 font-bold h-full flex items-center border-b-2 hover:border-highlight-dark transition duration-150 ease-in-out px-4"
-          ><i class="fas fa-envelope mr-3"></i>Contact us</a
+          ><i class="fas fa-handshake mr-3"></i>Trusted partners</a
         >
       </div>
     </div>
@@ -44,6 +44,9 @@
         >
           <i class="fab fa-instagram"></i>
         </a>
+        <lib-whatsapp-button class="flex-shrink-0"
+          [message]="'Hello, I would like to book a transfer.'"
+        ></lib-whatsapp-button>
       </div>
     </div>
     <div class="md:hidden flex items-center mt-2">
@@ -58,13 +61,15 @@
   <div *ngIf="displayMobileMenu" [@fadeInOut] class="md:hidden">
     <div class="py-4 flex-col flex gap-4">
       <a
-        routerLink="/transfers"
+        (click)="navigate('transfers')"
+        href="javascript:void(0)"
         (click)="displayMobileMenu = !displayMobileMenu"
         class="hover:text-highlight-dark text-xl font-bold"
         >Transfers</a
       >
       <a
-        routerLink="/contact-us"
+        (click)="navigate('trusted-partners')"
+        href="javascript:void(0)"
         (click)="displayMobileMenu = !displayMobileMenu"
         class="hover:text-highlight-dark text-xl font-bold"
         >Contact Us</a

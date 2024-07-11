@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, JsonPipe } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
-import { StepperModule } from 'primeng/stepper';
+import { WhatsappButtonComponent } from 'libs/ui-components/src';
 
 @Component({
   selector: 'lib-transfers',
   standalone: true,
-  imports: [CommonModule, StepperModule, ButtonModule],
+  imports: [CommonModule, ButtonModule, JsonPipe, WhatsappButtonComponent],
   templateUrl: './transfers.component.html',
   styleUrl: './transfers.component.scss',
 })

@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import {
   animate,
   state,
@@ -10,6 +10,7 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
+import { WhatsappButtonComponent } from '../whatsapp-button/whatsapp-button.component';
 
 @Component({
   selector: 'lib-navbar',
@@ -20,6 +21,7 @@ import {
     ButtonModule,
     RouterLink,
     RouterLinkActive,
+    WhatsappButtonComponent
   ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
@@ -37,6 +39,11 @@ import {
   ],
 })
 export class NavbarComponent implements OnInit {
+  router = inject(Router);
   ngOnInit(): void {}
   displayMobileMenu = false;
+
+  navigate(id: string) {
+    this.router.navigate([], { fragment: id });
+  }
 }
