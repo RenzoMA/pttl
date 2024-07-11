@@ -44,7 +44,8 @@
         >
           <i class="fab fa-instagram"></i>
         </a>
-        <lib-whatsapp-button class="flex-shrink-0"
+        <lib-whatsapp-button
+          class="flex-shrink-0"
           [message]="'Hello, I would like to book a transfer.'"
         ></lib-whatsapp-button>
       </div>
@@ -63,14 +64,12 @@
       <a
         (click)="navigate('transfers')"
         href="javascript:void(0)"
-        (click)="displayMobileMenu = !displayMobileMenu"
         class="hover:text-highlight-dark text-xl font-bold"
         >Transfers</a
       >
       <a
         (click)="navigate('trusted-partners')"
         href="javascript:void(0)"
-        (click)="displayMobileMenu = !displayMobileMenu"
         class="hover:text-highlight-dark text-xl font-bold"
         >Contact Us</a
       >
