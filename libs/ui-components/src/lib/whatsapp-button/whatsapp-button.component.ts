@@ -10,11 +10,17 @@ import { CommonModule } from '@angular/common';
 })
 export class WhatsappButtonComponent {
   message = input<string>();
-
+  isDisabled = input<boolean>(false);
   whatsappUrl = computed(
     () =>
       `https://api.whatsapp.com/send?phone=51989843152&text=${encodeURIComponent(
         this.message() || ''
       )}`
   );
+
+  handleClick(event: Event) {
+    if (this.isDisabled()) {
+      event.preventDefault();
+    }
+  }
 }

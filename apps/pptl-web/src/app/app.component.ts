@@ -1,10 +1,23 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FooterComponent, NavbarComponent } from '@pttl/ui-components';
+import {
+  BookingComponent,
+  FooterComponent,
+  NavbarComponent,
+  TransfersComponent,
+  TrustedPartnersComponent,
+} from '@pttl/ui-components';
 
 @Component({
   standalone: true,
-  imports: [RouterModule, NavbarComponent, FooterComponent],
+  imports: [
+    RouterModule,
+    NavbarComponent,
+    FooterComponent,
+    TrustedPartnersComponent,
+    TransfersComponent,
+    BookingComponent
+  ],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

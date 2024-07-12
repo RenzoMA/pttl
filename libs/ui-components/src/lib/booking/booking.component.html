@@ -1,0 +1,84 @@
+<div class="p-4 bg-gray-100 w-full px-4 py-8 mt-4 md:mt-10">
+  <h2 class="block text-2xl font-bold mb-6">
+    Jorge Chavez International Airport
+  </h2>
+
+  <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()" class="space-y-4">
+    <!-- From/To Airport -->
+    <div>
+      <div class="flex items-center space-x-4">
+        <p-radioButton
+          name="direction"
+          value="from"
+          label="From Airport"
+          formControlName="direction"
+        ></p-radioButton>
+        <p-radioButton
+          name="direction"
+          value="to"
+          label="To Airport"
+          formControlName="direction"
+        ></p-radioButton>
+      </div>
+    </div>
+
+    <!-- Date and Time -->
+    <div
+      class="flex gap-8 flex-col items-start justify-start md:flex-row md:flex-wrap"
+    >
+      <p-calendar
+        class="flex-shrink-0"
+        formControlName="dateTime"
+        [showTime]="true"
+        hourFormat="12"
+        placeholder="Date and time"
+        inputId="dateTime"
+      ></p-calendar>
+
+      <!-- District -->
+
+      <p-autoComplete
+        class="flex-shrink-0"
+        formControlName="district"
+        [suggestions]="filteredDistricts"
+        (completeMethod)="filterDistricts($event)"
+        field="name"
+        [forceSelection]="true"
+        [dropdown]="true"
+        [optionValue]="'name'"
+        inputStyleClass="flex"
+        placeholder="District"
+      ></p-autoComplete>
+
+      <!-- Flight Number -->
+
+      <input
+        *ngIf="bookingForm.controls.direction.value === 'from'"
+        pInputText
+        type="text"
+        formControlName="flightNumber"
+        placeholder="Flight number"
+        class="flex-shrink-0"
+      />
+    </div>
+
+    <!-- Full Address -->
+
+    <textarea
+      rows="2"
+      cols="30"
+      class="w-full"
+      pInputTextarea
+      formControlName="fullAddress"
+      placeholder="Full Address & references"
+    ></textarea>
+
+    <!-- Submit Button -->
+
+    <lib-whatsapp-button
+      class="py-3 block"
+      [isDisabled]="bookingForm.invalid"
+      [message]="bookMessage"
+    ></lib-whatsapp-button>
+  </form>
+</div>
